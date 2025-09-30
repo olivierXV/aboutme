@@ -4,7 +4,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to bottom right, #2529F4, #111969, #000, #691111);
+    background: linear-gradient(to bottom right, #2529F4, #111969, #000, #4a0a0a, #691111);
     background-size: 100%;
     background-position: center;
     background-repeat: repeat;
@@ -58,4 +58,5 @@ a:hover{
     max-width: 600px;
     line-height: 1;
     animation: moveClockwise 12.5s linear infinite;
+
 }

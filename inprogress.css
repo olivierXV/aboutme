@@ -12,7 +12,6 @@ html,body{
     color: #111;
     height: 100%;
     margin: 0;
-    font-size: 4vw;
 }
 
 ::selection {
@@ -47,6 +46,7 @@ a:hover{
     justify-content: center;
     margin: 0;
     padding: 0;
+    font-size: 150%;
 }
 
 .boxin{
@@ -68,4 +68,12 @@ a:hover{
 
 .boxin:hover{
     box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.201);
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        font-size: 5vw;
+        padding: 0;
+        width: 80%;
+    }
 }

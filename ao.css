@@ -39,6 +39,7 @@ section {
 
 .boxin {
   height: 100%;
+  display: flex; 
 }
 
 #home .box {
@@ -383,7 +384,6 @@ section#projects {
   flex-direction: row;
   gap: 1vw;
   width: 100%;
-  margin-top: 1%;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -392,8 +392,7 @@ section#projects {
   background-color: #fff;
   border-radius: 14px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  padding: 0 1% 0 1%;
-  width: 25vw;
+  width: 32%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -410,9 +409,13 @@ section#projects {
 }
 
 /* ============================================================
-   DESKTOP (>= 601px)
+   DESKTOP (>= 769 ||>= 601px)
    ============================================================ */
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 769px) {
+
+}
+
+@media screen and (min-width: 601px) { /*hybrid*/
   #logo {
     height: 100%;
     width: auto;
@@ -420,7 +423,6 @@ section#projects {
   }
 
   .boxin {
-    display: flex;
     flex-direction: row;
     width: 100%;
   }
@@ -446,11 +448,9 @@ section#projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 7%;
   }
 
   #about #left-side {
-    padding-left: 7%;
     width: 55%;
     height: 100%;
     display: flex;
@@ -516,13 +516,46 @@ section#projects {
 
 }
 
-@media screen and (min-width:769px) {
-  #about .skill-card {
-    min-width: 115px;
-  }
-}
 
-@media screen and (max-width:768px) {
+
+@media screen and (max-width:768px) { /*tablet*/
+  #home #adrin-img {
+    width: 50vw;
+    height: auto;
+  }
+
+  #home #right-side {
+    order: -1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+
+  #home .boxin {
+    flex-direction: column;
+  }
+
+  #home #left-side {
+    padding-top: 5vh;
+    order: 1;
+    font-size: 2.5vh;
+    width: 100%;
+  }
+
+  section#home {
+    height: auto;
+  }
+
+  #left-side{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  #home #left-side hr {
+    max-width: 100%;
+  }
+
   #about .skills-grid {
     flex-direction: row;
     align-items: center;
@@ -542,12 +575,37 @@ section#projects {
   }
 
   #about .boxin {
-    display: flex;
     flex-direction: column;
   }
 
   #about #left-side, #about #right-side {
     width: 100%;
+  }
+
+  #projects .project-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    width: 100%;
+  }
+
+  #projects .project-card {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section#about, section#projects {
+    height: auto;
+    min-height: calc(100vh - var(--navbar-height));
+  }
+
+  .boxin {
+    height: auto;
   }
 }
 
@@ -555,11 +613,52 @@ section#projects {
    MOBILE (<= 600px)
    ============================================================ */
 @media screen and (max-width: 600px) {
+  #home #adrin-img {
+    width: 60%;
+  }
+
   #home #right-side {
     align-items: center;
     justify-content: center;
     display: flex;
+    padding-top: 4vh;
   }
+
+  #home .boxin {
+    flex-direction: column;
+  }
+
+  #home #right-side {
+    order: -1;
+    margin: 0;
+  }
+
+  #home h1 {
+    font-size: 200%;
+    font-weight: 900;
+  }
+
+  #home .intro-text {
+    padding-top: 5vh;
+  }
+
+  #home #left-side {
+    order: 2;
+    margin: 0;
+    padding-top: 1%;
+    padding-bottom: 5vh;
+  }
+
+  section#home,
+  section#about {
+    height: auto;
+  }
+
+  section#home::after,
+  section#about::after {
+    height: 9vh;
+  }
+
   html, body {
     overflow-x: hidden;
     overflow-y: auto;
@@ -603,12 +702,10 @@ section#projects {
 
   .content {
     flex: none;
-    margin-top: calc(6.3vh + 1.5vh);
     margin-bottom: 0;
   }
 
   .box {
-    font-size: 4vw;
     padding: 5%;
     align-items: flex-start;
     border-radius: 10px;
@@ -619,25 +716,16 @@ section#projects {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 2%;
   }
 
   #left-side {
     display: grid;
     grid-template-rows: auto auto;
     align-items: start;
-    gap: 3%;
-    width: 100%;
   }
 
   #left-side h1 {
-    grid-column: 2;
-    grid-row: 2;
-    font-size: 5.5vw;
     margin: 0;
-    text-align: left;
-    padding-left: 2vw;
-    padding-top: 2vw;
   }
 
   #right-side {
@@ -660,36 +748,15 @@ section#projects {
   }
 
   #about .skills-grid {
-    flex-direction: column;
+    display: flex;
     align-items: center;
     width: 100%;
-    gap: 3vw;
   }
 
   #about .skill-card {
-    min-width: 100%;
-    width: 100%;
+    width: 45%;
+    height: 20vh;
     align-self: center;
-    margin-bottom: 1.5%;
-  }
-
-  #projects .project-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 3vw;
-    width: 100%;
-    margin-top: 1%;
-  }
-
-  #projects .project-card {
-    background-color: #fff;
-    border-radius: 14px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-    padding: 0 1% 0 1%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   #about .goals-box {
@@ -712,13 +779,20 @@ section#projects {
     font-size: 100%;
   }
 
-  #home #adrin-img {
-    width: 55%;
-    height: auto;
-    border-radius: 50% auto;
-    border: 10px solid #ffffff00;
-    box-shadow: 0 0 0 15px #fff;
-    text-shadow: #000000ba 0px 0px 15px;
-    backdrop-filter: blur(5px);
+  #projects .project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    width: 100%;
+  }
+
+  #projects .project-card {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

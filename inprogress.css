@@ -4,7 +4,7 @@ html,body{
     display: flex;
     flex-direction: column;
     align-items: center;
-  background-image: linear-gradient(135deg, #e3638e, #993955, #9e1945, #993955, #e3638e);  position: relative;
+    background-image: linear-gradient(135deg, #e3638e, #993955, #9e1945, #993955, #e3638e);  position: relative;
     background-size: 100%;
     background-position: center;
     background-repeat: repeat;
@@ -12,11 +12,12 @@ html,body{
     color: #111;
     height: 100%;
     margin: 0;
+    font-size: 4vw;
 }
 
 ::selection {
-  background-color: #ff9900; /* Custom highlight color */
-  color: #ffffff;            /* Custom text color */
+    background-color: #ff9900; /* Custom highlight color */
+    color: #ffffff;            /* Custom text color */
 }
 
 .center-wrapper {
@@ -41,7 +42,6 @@ a:hover{
 }
 
 .box{
-    font-size: 150%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,5 +69,3 @@ a:hover{
 .boxin:hover{
     box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.201);
 }
-
-
